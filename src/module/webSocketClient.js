@@ -6,11 +6,12 @@ export default class WebSocketClient {
 	}
 	
 	connect(){
+		let self = this;
 		this.ws = new WebSocket(this.url);
 		
 		this.ws.onopen = function(evt){
 			console.log('Connection open ...');
-			this.connected = true;
+			self.connected = true;
 		}
 		
 		this.ws.onmessage = function(evt){
@@ -19,7 +20,7 @@ export default class WebSocketClient {
 		
 		this.ws.onclose = function(evt){
 			console.log('Connection closed...');
-			this.connected = false;
+			self.connected = false;
 		}
 		
 		this.ws.onerror = function(evt){

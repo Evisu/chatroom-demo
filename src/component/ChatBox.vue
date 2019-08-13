@@ -1,6 +1,6 @@
 <template>
 	<div id="chatBox">
-		{{title}}
+		<div id="logArea" style="width:620px;height:600px;overflow-y:auto;"></div>
 	</div>
 </template>
 

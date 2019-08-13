@@ -6,14 +6,13 @@
 				  type="textarea"
 				  :rows="5"
 				  maxlength="200"
-				  style="vertical-align:top;"
 				  show-word-limit
 				  resize="none"
 				  v-model="message">
 				</el-input>
 			</span>
 			<span style="position: relative;bottom: 0;left: 45%;">
-				 <el-button type="primary" @click="dialogVisible = false" style="height: 34px;" :disabled="isSend">发送</el-button>
+				 <el-button type="primary" @click="sendMessage" style="height: 34px;" :disabled="isSend">发送</el-button>
 			</span>
 		</div>
 	</div>
@@ -39,6 +38,7 @@
 				  type: 'sendMsg',
 				  msg: this.message
 				});
+				this.message = '';
 			}
 		}
 	}
