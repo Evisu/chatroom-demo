@@ -1,10 +1,16 @@
+/**
+ * Webscoket 连接服务器客户端
+ */
 export default class WebSocketClient {
 	
 	constructor(url) {
+		// 服务地址
 	    this.url = url;
+		// 是否建立连接
 		this.connected = false;
 	}
 	
+	// 建立连接
 	connect(){
 		let self = this;
 		this.ws = new WebSocket(this.url);
@@ -28,10 +34,12 @@ export default class WebSocketClient {
 		}
 	}
 	
+	// 断开连接
 	disconnect(){
 		this.ws.close();
 	}
 	
+	// 发送消息
 	sendMsg(msg){
 		if(this.connected){
 			console.log('Send Message :'+msg);
@@ -41,6 +49,7 @@ export default class WebSocketClient {
 		}
 	}
 	
+	// 获取当前时间
 	getCurDate(){
 		var date = new Date();
 		//return date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate()
