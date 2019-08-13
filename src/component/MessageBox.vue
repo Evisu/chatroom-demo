@@ -4,14 +4,16 @@
 			<span>
 				<el-input
 				  type="textarea"
-				  :rows="2"
+				  :rows="5"
 				  maxlength="200"
+				  style="vertical-align:top;"
 				  show-word-limit
+				  resize="none"
 				  v-model="message">
 				</el-input>
 			</span>
-			<span>
-				 <el-button type="primary" @click="dialogVisible = false">发送</el-button>
+			<span style="position: relative;bottom: 0;left: 45%;">
+				 <el-button type="primary" @click="dialogVisible = false" style="height: 34px;">发送</el-button>
 			</span>
 		</div>
 	</div>
