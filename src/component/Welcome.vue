@@ -13,9 +13,11 @@
 		<el-dialog
 		  :visible.sync="dialogVisible"
 		  width="60%"
-		  height="600px"
 		  :before-close="handleClose">
-		  <span>
+		  <span slot="title">
+			  <font color="red" v-if="isConnect" >与服务器断开连接...</font>
+		  </span>
+		  <span style="height: 500px;">
 			  <ChatRoom></ChatRoom>
 		  </span>
 		</el-dialog>
@@ -47,6 +49,11 @@
 				}
 			}
 		},
+		computed:{
+			isConnect:function(){
+				return !this.$store.state.webSocketClient.connected == true;
+			}
+		},
 		methods: {
 			submitForm(formName) {
 				this.$refs[formName].validate((valid) => {
@@ -72,4 +79,10 @@
 </script>
 
 <style>
+	.el-dialog__body {
+	    padding: 0px 0px;
+	    color: #606266;
+	    font-size: 14px;
+	    word-break: break-all;
+	}
 </style>

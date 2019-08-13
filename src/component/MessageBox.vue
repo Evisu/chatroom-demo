@@ -1,20 +1,14 @@
 <template>
 	<div id="messageBox">
-		<div>
-			<span>
-				<el-input
-				  type="textarea"
-				  :rows="5"
-				  maxlength="200"
-				  show-word-limit
-				  resize="none"
-				  v-model="message">
-				</el-input>
-			</span>
-			<span style="position: relative;bottom: 0;left: 45%;">
-				 <el-button type="primary" @click="sendMessage" style="height: 34px;" :disabled="isSend">发送</el-button>
-			</span>
-		</div>
+		<el-input
+		  type="textarea"
+		  :rows="5"
+		  maxlength="200"
+		  show-word-limit
+		  resize="none"
+		  v-model="message">
+		</el-input>
+		<el-button type="primary" @click="sendMessage" style="height: 34px;" :disabled="isSend">发送</el-button>
 	</div>
 </template>
 

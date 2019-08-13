@@ -27,6 +27,6 @@
 		font-family: Helvetica, sans-serif;
 		text-align: center;
 		width:1000px;
-		margin-left: 400px;
+		margin-left: 200px;
 	}
 </style>

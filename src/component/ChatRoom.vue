@@ -1,11 +1,11 @@
 <template>
 	<div id="chatRoom">
 		<el-container>
-		  <el-aside width="300px">
+		  <el-aside width="200px">
 			  <Tree></Tree>
 		  </el-aside>
 		  <el-container>
-		    <el-header>
+		    <el-header height="30px">
 				<Header></Header>
 			</el-header>
 		    <el-main>
@@ -48,26 +48,27 @@
 		background-color: #B3C0D1;
 		color: #333;
 		text-align: center;
-		line-height: 60px;
+		line-height: 30px;
 	}
 	  
 	.el-footer {
 		color: #333;
 		text-align: center;
+		height: 60px;
+		padding: 0 0;
 	}
 	  
 	.el-aside {
-	    background-color: #D3DCE6;
 	    color: #333;
 	    text-align: center;
-	    line-height: 620px;
 	}
 	  
 	.el-main {
 		background-color: #E9EEF3;
 		color: #333;
 		text-align: center;
-		line-height: 460px;
+		height: 280px;
+		
 	}
 	  
 	body > .el-container {
