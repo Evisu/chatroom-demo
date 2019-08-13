@@ -29,17 +29,20 @@
 		components:{
 			ChatRoom
 		},
+		created: function () {
+		},
 		data(){
 			return {
 				title:'欢迎来到聊天室！',
 				dialogVisible: false,
 				form:{
-					name:''
+					name:this.$store.state.nickname
 				},
+				webSocketClient:{},
 				rules: {
 				  name: [
 					{ required: true, message: '请输入昵称', trigger: 'blur' },
-					{ min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+					{ min: 1, max: 5, message: '长度在 1 到 5 个字符', trigger: 'blur' }
 				  ]
 				}
 			}
@@ -48,6 +51,7 @@
 			submitForm(formName) {
 				this.$refs[formName].validate((valid) => {
 				  if (valid) {
+					this.$store.dispatch('connect');
 					this.dialogVisible = true;
 				  } else {
 					console.log('error submit!!');
@@ -58,7 +62,8 @@
 			handleClose(done){
 				this.$confirm('确认退出聊天室？')
 				.then(_ => {
-				done();
+					done();
+					this.$store.dispatch('disconnect');
 				})
 				.catch(_ => {});
 			}

@@ -13,7 +13,7 @@
 				</el-input>
 			</span>
 			<span style="position: relative;bottom: 0;left: 45%;">
-				 <el-button type="primary" @click="dialogVisible = false" style="height: 34px;">发送</el-button>
+				 <el-button type="primary" @click="dialogVisible = false" style="height: 34px;" :disabled="isSend">发送</el-button>
 			</span>
 		</div>
 	</div>
@@ -27,8 +27,19 @@
 				message:''
 			}
 		},
+		computed: {
+		    // 计算属性的 getter
+		    isSend: function () {
+		      return this.message == '';
+		    }
+		},
 		methods: {
-			
+			sendMessage(){
+				this.$store.dispatch({
+				  type: 'sendMsg',
+				  msg: this.message
+				});
+			}
 		}
 	}
 </script>
