@@ -9,9 +9,10 @@
 		</div>
 		<div style="height: 500px;overflow-y: auto;">
 			<el-alert
-			v-for="i in 14"
+			v-for="i in 20"
 			    :title="'联系人'+i"
 			    type="success"
+				:key="i"
 			    :closable="false">
 			</el-alert>
 		</div>

@@ -3,9 +3,10 @@
  */
 export default class WebSocketClient {
 	
-	constructor(url) {
+	constructor(payload) {
 		// 服务地址
-	    this.url = url;
+	    this.url = payload.url;
+		this.onmessage = payload.onmessage;
 		// 是否建立连接
 		this.connected = false;
 	}
@@ -22,6 +23,7 @@ export default class WebSocketClient {
 		
 		this.ws.onmessage = function(evt){
 			console.log('Received Message :'+evt.data);
+			self.onmessage(evt.data);
 		}
 		
 		this.ws.onclose = function(evt){
@@ -54,5 +56,9 @@ export default class WebSocketClient {
 		var date = new Date();
 		//return date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate()
 		return date.getHours() + ':' + (date.getMinutes() < 10 ? ('0'+date.getMinutes()): date.getMinutes() )+ ':' + (date.getSeconds() < 10 ? ('0'+date.getSeconds()): date.getSeconds());
+	}
+	
+	onmessage(msg){
+		
 	}
 }

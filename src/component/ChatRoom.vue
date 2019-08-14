@@ -1,9 +1,9 @@
 <template>
 	<div id="chatRoom">
 		<el-container>
-		  <el-aside width="200px">
+		 <!-- <el-aside width="200px">
 			  <Tree></Tree>
-		  </el-aside>
+		  </el-aside> -->
 		  <el-container>
 		    <el-header height="30px">
 				<Header></Header>

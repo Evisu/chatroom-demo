@@ -12,10 +12,10 @@
 		
 		<el-dialog
 		  :visible.sync="dialogVisible"
-		  width="60%"
+		  width="40%"
 		  :before-close="handleClose">
 		  <span slot="title">
-			  <font color="red" v-if="isConnect" >与服务器断开连接...</font>
+			  <font color="red" v-if="!isConnect" >与服务器断开连接...</font>
 		  </span>
 		  <span style="height: 500px;">
 			  <ChatRoom></ChatRoom>
@@ -51,7 +51,7 @@
 		},
 		computed:{
 			isConnect:function(){
-				return !this.$store.state.webSocketClient.connected == true;
+				return this.$store.state.webSocketClient.connected == true;
 			}
 		},
 		methods: {
@@ -71,6 +71,7 @@
 				.then(_ => {
 					done();
 					this.$store.dispatch('disconnect');
+					this.$store.dispatch('clearMessage')
 				})
 				.catch(_ => {});
 			}
