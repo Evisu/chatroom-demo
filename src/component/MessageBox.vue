@@ -14,11 +14,9 @@
 
 <script>
 	export default {
-		data(){
-			return {
-				title:'发送消息窗口',
-				message:''
-			}
+		data:{
+			title:'发送消息窗口',
+			message:''
 		},
 		computed: {
 		    // 计算属性的 getter

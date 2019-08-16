@@ -9,7 +9,6 @@
 		  </el-form-item>
 		</el-form>
 		
-		
 		<el-dialog
 		  :visible.sync="dialogVisible"
 		  width="40%"

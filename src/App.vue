@@ -11,9 +11,7 @@
 		components:{
 			ChatRoom,Welcome
 		},
-		data(){
-			return {
-			}
+		data:{
 		},
 		methods: {
 			

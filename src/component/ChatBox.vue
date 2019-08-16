@@ -11,10 +11,8 @@
 
 <script>
 	export default {
-		data(){
-			return {
-				title:'聊天窗口'
-			}
+		data:{
+			title:'聊天窗口'
 		},
 		computed: {
 		    // 计算属性的 getter

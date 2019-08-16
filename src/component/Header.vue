@@ -6,10 +6,8 @@
 
 <script>
 	export default {
-		data(){
-			return {
-				title:'聊天室'
-			}
+		data:{
+			title:'聊天室'
 		},
 		methods: {
 			

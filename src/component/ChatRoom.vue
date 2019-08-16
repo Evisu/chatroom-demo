@@ -28,9 +28,7 @@
 		components:{
 			Tree,ChatBox,Header,MessageBox
 		},
-		data(){
-			return {
-			}
+		data:{
 		},
 		methods: {
 			
